@@ -23,6 +23,11 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
       - name: Install OGP image dependencies
         run: |
           sudo apt-get update
@@ -30,10 +35,9 @@ jobs:
       - name: Generate article OGP images
         run: ruby scripts/generate-ogp.rb
       - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
+        run: bundle exec jekyll build --destination ./_site --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
 
