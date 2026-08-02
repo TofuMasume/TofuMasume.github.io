@@ -1,0 +1,25 @@
+# OGP card design (1200 x 630)
+default_title: "Tofu Masume Blog"
+background_color: "#f6f4ec"
+text_color: "#1a262b"
+accent_color: "#1a262b"
+
+font:
+  family: "Noto Sans CJK JP, sans-serif"
+  size: 58
+  weight: 700
+  line_height: 82
+
+title:
+  x: 92
+  max_line_width: 17.0
+
+accent_bar:
+  width: 22
+
+avatar:
+  path: "assets/images/avatar.png"
+  center_x: 1076
+  center_y: 122
+  size: 112
+  border_width: 3

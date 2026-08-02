@@ -23,9 +23,25 @@ email: contact@t-masu.me
 description: >- # this means to ignore newlines until "baseurl:"
   個人的なメモとか色々
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://tofumasume.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: tofu_vr
 github_username:  TofuMasume
+
+# Link previews (Open Graph / X Card)
+twitter:
+  username: tofu_vr
+  card: summary_large_image
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      image:
+        path: /assets/images/ogp.png
+        width: 1200
+        height: 630
+        alt: "Tofu Masume Blog"
 
 # Build settings
 theme: minima

@@ -23,6 +23,12 @@ jobs:
       - name: Configure GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Install OGP image dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes librsvg2-bin fonts-noto-cjk
+      - name: Generate article OGP images
+        run: ruby scripts/generate-ogp.rb
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
